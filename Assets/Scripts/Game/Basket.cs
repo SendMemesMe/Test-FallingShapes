@@ -15,6 +15,7 @@ public class Basket : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     private Vector2 dragStartPosition;
     public float speedMultiplier = 1.0f;
     public UIScore uiscore;
+    public Sounds sounds;
 
 
     private void OnEnable()
@@ -89,11 +90,13 @@ public class Basket : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         {
             Destroy(collision.gameObject);
             uiscore.AddScore(3);
+            sounds.PlaySoundWin();
         }
         else
         {
             Destroy(collision.gameObject);
             uiscore.SubtractScore(1);
+            sounds.PlaySoundLose();
         }
     }
 }

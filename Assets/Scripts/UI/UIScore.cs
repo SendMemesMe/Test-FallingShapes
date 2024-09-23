@@ -40,6 +40,6 @@ public class UIScore : MonoBehaviour
     private void UpdateScore()
     {
         scoreText.text = $"Score: {score}";
-        hscoreText.text = $"High Score: {score}";
+        hscoreText.text = $"High Score: {hcore}";
     }
 }
